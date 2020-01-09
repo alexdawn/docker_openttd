@@ -1,7 +1,7 @@
 # BUILD ENVIRONMENT
 FROM debian:latest AS build
 
-ARG OPENTTD_VERSION="1.9.1"
+ARG OPENTTD_VERSION="jgrpp-0.32.4"
 ARG OPENGFX_VERSION="0.5.4"
 
 # Get things ready
@@ -25,7 +25,7 @@ RUN apt-get update && \
 # Build OpenTTD itself
 WORKDIR /tmp/src
 
-RUN git clone https://github.com/OpenTTD/OpenTTD.git . \
+RUN git clone https://github.com/JGRennison/OpenTTD-patches.git . \
     && git fetch --tags \
     && git checkout ${OPENTTD_VERSION}
 
